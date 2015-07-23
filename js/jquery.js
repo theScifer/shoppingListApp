@@ -1,7 +1,24 @@
 function addListItem() {
 	var text = $("#new-text").val();
-	$("#shoppingList").append('<li><input type="checkbox"> '+text+ ' <button class="delete"><img src="images/redx.png" alt="delete button"></button></li>');
-	$("#new-text").val('');
+	    if (isBlank(text)) {
+	      return;
+	    }
+	var html = $('#template').html().replace(/{{itemText}}/g,text);               
+		$("#shoppingList").append(html);
+		$("#new-text").val('');
+}
+
+function isBlank(text) {
+  if ((text == null) || (text.length == 0)) {
+    return true;
+  }
+  
+  var trimmedText = text.replace(/^\s+|\s+$/g,'');
+  if (trimmedText.length == 0) {
+    return true;
+  }
+  
+  return false;
 }
 
 function deleteItem() {
@@ -12,8 +29,10 @@ function finishItem() {
 	$(this).parent().toggleClass('strikethrough');
 }
 
-$(function() {
+$(document).ready(function() {
 	$("#add").on('click', addListItem);
-	$(document).on('click', '.delete', deleteItem);
-	$(document).on('click', '.done', finishItem);
+	$('#shoppingList').on('click', '.delete', deleteItem);
+	$('#shoppingList').on('click', '.done', finishItem);
+  //$('.delete').on('click', deleteItem);
+  //$('.done').on('click', finishItem);
 });
