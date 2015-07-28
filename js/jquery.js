@@ -29,10 +29,18 @@ function finishItem() {
 	$(this).parent().toggleClass('strikethrough');
 }
 
+function deleteAllChecked() {
+	$('input:checked').parent().remove();
+}
+
+function deleteAll() {
+	$('input:checkbox').parent().remove();
+}
+
 $(document).ready(function() {
 	$("#add").on('click', addListItem);
 	$('#shoppingList').on('click', '.delete', deleteItem);
 	$('#shoppingList').on('click', '.done', finishItem);
-  //$('.delete').on('click', deleteItem);
-  //$('.done').on('click', finishItem);
+	$('#shoppingList').on('click', '#delete-checked', deleteAllChecked);
+	$('#shoppingList').on('click', '#delete-all', deleteAll);
 });

@@ -2,7 +2,34 @@
 	text-decoration: line-through;
 }
 
+h1 {
+	padding-left: 40px;
+}
+
 li {
-  list-style: none;
-  padding-top: 5px;
+    list-style: none;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+#add {
+	margin-left: 10px;
+}
+
+.delete {
+	margin-left: 10px;
+}
+
+#main {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#new-text {
+	margin-bottom: 10px;
+}
+
+#delete-checked {
+	margin-left: 30px;
 }
