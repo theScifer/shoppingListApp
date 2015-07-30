@@ -41,6 +41,7 @@ $(document).ready(function() {
 	$("#add").on('click', addListItem);
 	$('#shoppingList').on('click', '.delete', deleteItem);
 	$('#shoppingList').on('click', '.done', finishItem);
-	$('#shoppingList').on('click', '#delete-checked', deleteAllChecked);
-	$('#shoppingList').on('click', '#delete-all', deleteAll);
+
+	// $('#delete-checked').on('click',deleteAllChecked);
+	// $('#delete-all').on('click',deleteAll)
 });
